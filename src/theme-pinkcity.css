@@ -1,0 +1,49 @@
+/* @fonts https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;1,9..144,500&family=DM+Sans:wght@400;500;700&display=swap */
+/* @title Jhamman Sharma — Pink City */
+/* Pink City: original theme inspired by Jaipur. Terracotta rose, sandstone, indigo and marigold, with jharokha arch frames. */
+:root{
+  --rose:#B4544A; --rose-deep:#8C3A33; --sand:#F6EBDD; --sand-2:#EFDCC6; --indigo:#1D2440; --marigold:#E3A229; --teal:#1F6F6B;
+  --bg:#FBF6EF; --bg-alt:var(--sand); --card:#FFFFFF; --ink:#22202A; --muted:#62584F; --line:#E8D8C4;
+  --accent:var(--rose); --accent-ink:#FFF8F0; --btn-bg:var(--rose);
+  --head:'Fraunces',Georgia,serif; --body:'DM Sans','Helvetica Neue',Arial,sans-serif; --head-weight:500; --head-spacing:-.02em;
+  --em-font:'Fraunces',Georgia,serif; --em-style:italic; --em-color:var(--rose);
+  --radius:12px; --radius-lg:20px; --btn-radius:12px;
+  --shadow:0 24px 50px rgba(140,58,51,.18); --shadow-soft:0 1px 0 rgba(0,0,0,.02);
+  --topbar-bg:var(--rose-deep); --topbar-ink:#FBE9DF;
+  --header-bg:rgba(251,246,239,.9); --header-ink:var(--indigo); --header-line:var(--line);
+  --hero-bg:var(--sand); --hero-ink:var(--indigo); --hero-muted:#5d5560; --hero-line:rgba(29,36,64,.15);
+  --strip-bg:var(--rose); --strip-ink:#FFF1E8; --strip-num:#FFFFFF; --strip-line:rgba(255,255,255,.2);
+  --dark:var(--indigo); --dark-ink:#F6EBDD; --dark-muted:#b9bdd1; --dark-line:rgba(246,235,221,.14); --dark-card:#262E50; --dark-em:var(--marigold);
+  --metric-bg:#FBEBD0; --metric-ink:#8a5a07;
+  --contact-bg:var(--rose-deep); --contact-ink:#FFF3EA; --contact-muted:#F2CFC5; --contact-line:rgba(255,255,255,.2);
+}
+/* jaali-pattern hero */
+.hero{background-color:var(--sand);background-image:radial-gradient(circle at 50% 50%,rgba(180,84,74,.10) 2px,transparent 2.5px),radial-gradient(circle at 0 0,rgba(180,84,74,.06) 10px,transparent 11px);background-size:28px 28px,56px 56px}
+.hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:14px;background:repeating-linear-gradient(90deg,var(--rose) 0 28px,var(--marigold) 28px 56px,var(--teal) 56px 84px)}
+/* jharokha arches */
+.frame-a{border-radius:999px 999px 20px 20px;width:62%;height:86%;left:6%}
+.frame-b{border-radius:999px 999px 20px 20px;width:44%;height:60%;border:8px solid var(--sand)}
+.hero-badge{background:var(--indigo);color:var(--sand);left:auto;right:46%;bottom:2%}
+.hero-badge b{color:var(--marigold)}
+.btn-line{border-color:var(--indigo);color:var(--indigo)}
+.btn-primary:hover{background:var(--rose-deep)}
+.avatar{background:var(--marigold);color:var(--indigo)}
+.product-media .main{border-radius:240px 240px 20px 20px;aspect-ratio:1/1}
+.product-media .main.contain{border-radius:240px 240px 20px 20px}
+.thumbs img{border-radius:999px 999px 12px 12px}
+.practice:nth-child(1){border-top:6px solid var(--rose)}
+.practice:nth-child(2){border-top:6px solid var(--teal)}
+.practice:nth-child(2) .kicker,.practice:nth-child(2) .steps li::before{color:var(--teal)}
+.pstep:nth-child(2) .num{color:var(--teal)}
+.pstep:nth-child(3) .num{color:var(--marigold)}
+.promises div:nth-child(2){border-top-color:var(--teal)}
+.promises div:nth-child(3){border-top-color:var(--marigold)}
+.promises div:nth-child(4){border-top-color:var(--indigo)}
+.sec-dark .eyebrow{color:var(--marigold)}
+.contact .eyebrow{color:#FFD58A}
+.map td:last-child{color:var(--teal);font-weight:600}
+.p-pay{background:var(--indigo)}
+.pcard .mock{border-top:4px solid var(--marigold)}
+.hv-photo{border-radius:999px 999px 20px 20px;width:52%;height:72%}
+.hv-line{color:var(--rose)}
+.ob-photo{border-radius:999px 999px 20px 20px;border-color:var(--sand)}
