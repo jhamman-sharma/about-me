@@ -164,13 +164,14 @@ p{margin:0 0 1em}
 .minis{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:24px}
 @media (max-width:760px){.minis{grid-template-columns:1fr}}
 .mini{background:var(--card);border:1px solid var(--line);border-radius:var(--radius-lg);padding:28px}
+.mini:only-child{grid-column:1/-1}
 .mini p{color:var(--muted);margin:0}
 .mini b{color:var(--ink)}
 .mini a{color:var(--accent);font-weight:600}
 
 /* paytm */
-.paytm-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-@media (max-width:960px){.paytm-grid{grid-template-columns:1fr 1fr}}
+.paytm-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+@media (max-width:1100px){.paytm-grid{grid-template-columns:1fr 1fr}}
 @media (max-width:640px){.paytm-grid{grid-template-columns:1fr}}
 .pcard{display:flex;flex-direction:column;text-decoration:none;background:var(--dark-card);border:1px solid var(--dark-line);border-radius:var(--radius-lg);overflow:hidden;transition:transform .25s}
 .pcard:hover{transform:translateY(-4px)}
@@ -196,6 +197,11 @@ p{margin:0 0 1em}
 .pcard-copy p{color:var(--dark-muted);font-size:.92rem}
 .pcard-copy b{color:var(--dark-ink)}
 .pcard-copy .txt{color:var(--dark-em,var(--accent))}
+.plinks{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:10px;margin-top:30px}
+.plinks-title{width:100%;text-align:center;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--dark-muted);margin-bottom:4px}
+.plinks a{font-size:.85rem;font-weight:600;padding:8px 16px;border-radius:999px;text-decoration:none;color:var(--dark-ink);background:var(--dark-card);border:1px solid var(--dark-line);transition:border-color .2s,color .2s}
+.plinks a::after{content:" ↗";color:var(--dark-em,var(--accent))}
+.plinks a:hover{border-color:var(--dark-em,var(--accent));color:var(--dark-em,var(--accent))}
 .paytm-metrics{display:grid;grid-template-columns:repeat(4,1fr);margin-top:36px;border-top:1px solid var(--dark-line);border-bottom:1px solid var(--dark-line)}
 .paytm-metrics div{padding:24px 12px;text-align:center;border-right:1px solid var(--dark-line)}
 .paytm-metrics div:last-child{border-right:0}
@@ -258,6 +264,7 @@ p{margin:0 0 1em}
 .form input,.form select{font:inherit;font-size:.95rem;padding:12px 14px;border:1px solid var(--line);border-radius:var(--radius);background:var(--bg);color:var(--ink)}
 .form input:focus,.form select:focus{outline:2px solid var(--accent);outline-offset:1px}
 .form small{color:var(--muted);text-align:center}
+.form .btn{justify-content:center;text-align:center}
 .footer{background:var(--contact-bg);color:var(--contact-muted);font-size:.8rem;text-align:center;padding:24px 0 36px;border-top:1px solid var(--contact-line)}
 
 /* insurance */
@@ -448,6 +455,117 @@ a.ai-card:hover{transform:translateY(-3px)}
 .hl-modes .spark{width:15px;height:15px}
 .layer-row q{font-style:italic;font-weight:600}
 .hl-line em{padding:.05em .25em .15em .15em;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+/* Paytm Checkin showcase inside the dark Paytm section */
+.checkin{display:grid;grid-template-columns:1fr 1.4fr;gap:48px;align-items:center;margin:0 0 56px}
+@media (max-width:900px){.checkin{grid-template-columns:1fr;gap:32px}}
+.checkin-copy .kicker{color:var(--dark-em,var(--accent))}
+.checkin-copy h3{color:var(--dark-ink);font-size:2rem;margin:6px 0 12px}
+.checkin-copy p{color:var(--dark-muted)}
+.checkin-copy .ticks li{color:var(--dark-ink);border-bottom-color:var(--dark-line)}
+.checkin-copy .ticks li::before{border-color:var(--dark-em,var(--accent))}
+.checkin-copy .txt{color:var(--dark-em,var(--accent))}
+.checkin-phones{grid-template-columns:repeat(3,1fr);margin-bottom:0;padding-top:18px}
+.checkin-phones img{aspect-ratio:390/844}
+.sec-dark .superapp-screens figcaption{color:var(--dark-muted)}
+.sec-dark .superapp-screens figcaption b{color:var(--dark-ink)}
+@media (max-width:900px){.checkin-phones{grid-template-columns:repeat(3,1fr)}.checkin-phones .mid img{transform:translateY(-18px)}}
+@media (max-width:560px){.checkin-phones{gap:10px}.checkin-phones img{border-width:4px;border-radius:18px}.checkin-phones figcaption{font-size:.7rem}}
+.ins-phones{max-width:780px;margin:0 auto 48px}
+.ob-screen img{object-position:top;background:#eef0fb;padding-top:16%;box-sizing:border-box}
+/* Orbit labels: Paytm labels stack on the left under the Checkin screen, BitBlue labels stack top-right, Pabulum sits on its photo */
+.ob-pill.c4{top:1%;right:2%;left:auto;bottom:auto}
+.ob-pill.c2{top:13%;right:8%;left:auto;bottom:auto}
+.ob-pill.c3{top:25%;right:-2%;left:auto;bottom:auto}
+.ob-pill.c1{bottom:5%;right:16%;top:auto;left:auto}
+.ob-pill.c5{bottom:32%;left:0;top:auto;right:auto}
+.ob-pill.c6{bottom:20%;left:4%;top:auto;right:auto}
+.ob-chat{bottom:3%;left:0;right:auto;transform:none}
+@media (max-width:900px){
+  .ob-pill.c4{top:0;right:0}
+  .ob-pill.c2{top:10%;right:4%}
+  .ob-pill.c3{top:20%;right:0}
+  .ob-pill.c1{bottom:19%;right:0}
+  .ob-pill.c5{bottom:33%;left:0}
+  .ob-pill.c6{bottom:22%;left:0}
+  .ob-chat{bottom:2%;left:0;right:auto}
+}
+
+/* Product wall: tilted, two-row marquee of real screens */
+.wall{position:relative;overflow:hidden;padding:96px 0 24px;background:var(--bg-alt);isolation:isolate}
+.wall::before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(closest-side at 18% 30%,rgba(124,92,255,.22),transparent),radial-gradient(closest-side at 82% 70%,rgba(212,80,154,.18),transparent),radial-gradient(closest-side at 60% 20%,rgba(240,160,60,.16),transparent)}
+.wall-head{text-align:center}
+.wall-head h2{max-width:920px;margin:14px auto 0;font-size:clamp(1.7rem,3.4vw,2.9rem);line-height:1.15}
+.wall-head h2 em{background:var(--ai-grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.wall-stage{perspective:1800px;margin-top:28px;height:920px;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.wall-tilt{width:150%;margin-left:-25%;transform:rotateX(20deg) rotateZ(-7deg);transform-origin:50% 40%;padding-top:40px}
+.wall-row{margin:0 0 30px}
+.wall-track{display:flex;width:max-content;animation:wallscroll 70s linear infinite}
+.wall-dup{display:flex}
+.r2 .wall-track{animation-duration:85s;animation-direction:reverse}
+.wall-stage:hover .wall-track{animation-play-state:paused}
+@keyframes wallscroll{to{transform:translateX(-50%)}}
+.wp,.wc{margin:0 24px 0 0;flex:none}
+.wp{width:210px}
+.wp img{width:100%;aspect-ratio:390/844;object-fit:cover;object-position:top;border-radius:28px;border:7px solid #15161a;background:#fff;box-shadow:0 34px 60px rgba(15,16,32,.35)}
+.wc{width:400px}
+.wc img{width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:20px;background:#fff;box-shadow:0 30px 56px rgba(15,16,32,.3)}
+.wp figcaption,.wc figcaption{margin-top:12px;font-size:.78rem;color:var(--muted);line-height:1.35}
+.wp figcaption b,.wc figcaption b{display:block;color:var(--ink);font-size:.9rem}
+@media (max-width:900px){.wall{padding-top:72px}.wall-stage{height:640px}.wp{width:140px}.wp img{border-width:5px;border-radius:20px}.wc{width:260px}.wp,.wc{margin-right:16px}.wall-row{margin-bottom:22px}}
+@media (prefers-reduced-motion:reduce){.wall-track{animation:none}}
+/* Hero: centred intro with the product wall as the hero visual */
+.hero-wall{padding:72px 0 0}
+.hero-solo{text-align:center;max-width:900px}
+.hero-solo .lead{max-width:760px;margin-left:auto;margin-right:auto}
+.hero-solo .ctas{justify-content:center}
+.hero-solo .hero-who{justify-content:center;text-align:left;max-width:680px;margin:0 auto}
+.wall-label{text-align:center;margin-top:44px;font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--hero-muted)}
+.wall-label .ai-chip{margin-right:8px}
+.hero-wall .wall-stage{margin-top:0}
+.hero-wall .wp figcaption,.hero-wall .wc figcaption{color:var(--hero-muted)}
+.hero-wall .wp figcaption b,.hero-wall .wc figcaption b{color:var(--hero-ink)}
+@media (max-width:900px){.hero-wall{padding-top:48px}.wall-label{margin-top:32px}}
+
+/* At a glance: three chapters + common-thread grid */
+.chapters{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;position:relative}
+.chapter{position:relative;display:flex;flex-direction:column;text-decoration:none;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:var(--radius-lg);padding:28px;box-shadow:var(--shadow-soft);transition:transform .25s,box-shadow .25s}
+.chapter:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.chapter:not(:last-child)::after{content:"→";position:absolute;right:-24px;top:50%;transform:translateY(-50%);width:20px;text-align:center;font-size:1.3rem;color:var(--accent);z-index:2}
+.ch-step{font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+.chapter h3{margin:8px 0 2px;font-size:1.5rem}
+.ch-org{font-size:.85rem;color:var(--muted)}
+.ch-num{font-family:var(--head);font-size:3rem;line-height:1;margin-top:22px;color:var(--ink)}
+.ch-now .ch-num{background:var(--ai-grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.ch-numlabel{font-size:.85rem;color:var(--muted);margin-top:4px}
+.ch-chips{display:flex;flex-wrap:wrap;gap:6px;margin:20px 0}
+.ch-chips i{font-style:normal;font-size:.75rem;font-weight:600;padding:4px 10px;border-radius:999px;background:var(--bg-alt);border:1px solid var(--line)}
+.ch-go{margin-top:auto;font-weight:600;font-size:.9rem;color:var(--accent)}
+.ch-now{border-color:transparent;background-image:linear-gradient(var(--card),var(--card)),var(--ai-grad);background-origin:border-box;background-clip:padding-box,border-box}
+@media (max-width:900px){.chapters{grid-template-columns:1fr;gap:34px}.chapter:not(:last-child)::after{content:"↓";right:auto;left:50%;top:auto;bottom:-30px;transform:translateX(-50%)}}
+.threads{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:36px}
+.thread-card{padding:20px 22px;border-radius:var(--radius-lg);background:var(--bg-alt);border:1px solid var(--line)}
+.tc-k{display:block;font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:8px}
+.thread-card p{margin:0;font-size:.92rem;line-height:1.5}
+.thread-card p span{color:var(--accent);font-weight:700;padding:0 2px}
+.tc-ai{border-color:transparent;background-image:linear-gradient(var(--bg-alt),var(--bg-alt)),var(--ai-grad);background-origin:border-box;background-clip:padding-box,border-box}
+@media (max-width:1000px){.threads{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.threads{grid-template-columns:1fr}}
+
+/* Enterprise work (CRISIL, BTS) */
+.ent-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.ent-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius-lg);padding:32px;box-shadow:var(--shadow-soft);display:flex;flex-direction:column}
+.ent-card .kicker{color:var(--accent)}
+.ent-card h3{margin:8px 0 10px;font-size:1.5rem}
+.ent-card>p{color:var(--muted)}
+.ent-card .ch-chips{margin:auto 0 0;padding-top:8px}
+@media (max-width:860px){.ent-grid{grid-template-columns:1fr}}
+/* four chapters */
+.chapters{grid-template-columns:repeat(4,1fr);gap:24px}
+.chapter{padding:24px}
+.chapter h3{font-size:1.3rem}
+.chapter:not(:last-child)::after{right:-22px}
+@media (max-width:1100px){.chapters{grid-template-columns:1fr 1fr;gap:34px}.chapter:nth-child(2)::after{content:"↓";right:auto;left:50%;top:auto;bottom:-30px;transform:translateX(-50%)}}
+@media (max-width:900px){.chapters{grid-template-columns:1fr}.chapter:not(:last-child)::after{content:"↓";right:auto;left:50%;top:auto;bottom:-30px;transform:translateX(-50%)}}
 
 /* @fonts https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;1,9..144,500&family=DM+Sans:wght@400;500;700&display=swap */
 /* @title Jhamman Sharma — Pink City */

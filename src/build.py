@@ -5,17 +5,21 @@ import re
 SRC = pathlib.Path(__file__).parent
 OUT = SRC.parent
 
-# (body file, theme, extra page css or None, output file, title or None to use the theme's @title)
+# (body file, theme, extra page css or None, output file, title or None to use the theme's @title, meta description)
+PROFILE = "Jhamman Lal Sharma: engineering leader. Booking, payments, insurance and AI platforms built at Paytm scale, plus live products from BitBlue."
+CONSULT = "Jhamman Lal Sharma: hospitality and e-commerce technology consultant. Ordering, booking and multi-shop platforms."
+
 PAGES = [
-    ("body.html", "noir", None, "portfolio-noir-gold.html", None),
-    ("body.html", "ivory", None, "portfolio-ivory-ink.html", None),
-    ("body.html", "pinkcity", None, "portfolio-pink-city.html", None),
-    ("body-merrillion.html", "pinkcity", "page-merrillion.css", "merrillion-proposal.html", "Merrillion — Execution Roadmap"),
+    ("body.html", "noir", None, "portfolio-noir-gold.html", None, PROFILE),
+    ("body.html", "ivory", None, "index.html", None, PROFILE),
+    ("body-consulting.html", "ivory", None, "consulting.html", "Jhamman Sharma — Consulting", CONSULT),
+    ("body.html", "pinkcity", None, "portfolio-pink-city.html", None, PROFILE),
+    ("body-merrillion.html", "pinkcity", "page-merrillion.css", "merrillion-proposal.html", "Merrillion — Execution Roadmap", CONSULT),
 ]
 
 base = (SRC / "base.css").read_text(encoding="utf-8")
 
-for body_file, theme, extra, out_name, title in PAGES:
+for body_file, theme, extra, out_name, title, desc in PAGES:
     body = (SRC / body_file).read_text(encoding="utf-8")
     css = (SRC / f"theme-{theme}.css").read_text(encoding="utf-8")
     if extra:
@@ -28,7 +32,7 @@ for body_file, theme, extra, out_name, title in PAGES:
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{title}</title>
-<meta name="description" content="Jhamman Lal Sharma: hospitality and e-commerce technology consultant. Ordering, booking and multi-shop platforms.">
+<meta name="description" content="{desc}">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="{fonts}" rel="stylesheet">
