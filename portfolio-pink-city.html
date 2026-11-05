@@ -566,6 +566,9 @@ a.ai-card:hover{transform:translateY(-3px)}
 .chapter:not(:last-child)::after{right:-22px}
 @media (max-width:1100px){.chapters{grid-template-columns:1fr 1fr;gap:34px}.chapter:nth-child(2)::after{content:"↓";right:auto;left:50%;top:auto;bottom:-30px;transform:translateX(-50%)}}
 @media (max-width:900px){.chapters{grid-template-columns:1fr}.chapter:not(:last-child)::after{content:"↓";right:auto;left:50%;top:auto;bottom:-30px;transform:translateX(-50%)}}
+.domains{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:8px;margin:18px auto 16px}
+.domains span{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--hero-muted,var(--muted));margin-right:4px;font-weight:600}
+.domains i{font-style:normal;font-size:13px;padding:5px 12px;border-radius:999px;border:1px solid color-mix(in srgb,var(--hero-ink,var(--ink)) 22%,transparent);color:var(--hero-ink,var(--ink))}
 
 /* @fonts https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;1,9..144,500&family=DM+Sans:wght@400;500;700&display=swap */
 /* @title Jhamman Sharma — Pink City */
@@ -659,6 +662,7 @@ a.ai-card:hover{transform:translateY(-3px)}
     <div class="hero-copy">
       <div class="eyebrow">Built Paytm's travel booking, insurance &amp; AI systems, used by millions <span class="ai-chip"><svg class="spark" aria-hidden="true"><use href="#spk"/></svg>AI-powered</span></div>
       <h1>Booking, payments &amp; AI platforms, <em>built for millions.</em></h1>
+      <div class="domains"><span>Domains</span><i>Travel</i><i>Payments</i><i>Wallets</i><i>Insurance</i><i>Fintech</i><i>EdTech</i></div>
       <p class="lead">14 years of building products and platforms end to end. At Paytm I led engineering for flights, bus, motor insurance and the marketplace, and built AI travel agents and voice booking that shipped as Paytm Checkin. Before that I built restaurant, smart-home, healthcare, education and payments platforms that are still live, and today I'm building a WeChat-style super-app for the Gulf.</p>
       <div class="ctas">
         <a class="btn btn-primary" href="#glance">See my work</a>
