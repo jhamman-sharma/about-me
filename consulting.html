@@ -569,6 +569,85 @@ a.ai-card:hover{transform:translateY(-3px)}
 .domains{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:8px;margin:18px auto 16px}
 .domains span{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--hero-muted,var(--muted));margin-right:4px;font-weight:600}
 .domains i{font-style:normal;font-size:13px;padding:5px 12px;border-radius:999px;border:1px solid color-mix(in srgb,var(--hero-ink,var(--ink)) 22%,transparent);color:var(--hero-ink,var(--ink))}
+/* engineering cards (replace drawn mocks) */
+.pc-eng .pc-top{margin:22px 22px 0;padding:18px 18px 16px;border-radius:16px;background:linear-gradient(135deg,color-mix(in srgb,var(--dark-em,var(--accent)) 22%,transparent),transparent);border:1px solid var(--dark-line);display:flex;flex-direction:column;gap:2px}
+.pc-k{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--dark-muted);font-weight:600}
+.pc-top b{font-family:var(--head);font-size:2.4rem;line-height:1.05;color:var(--dark-em,var(--accent))}
+.pc-top small{color:var(--dark-muted);font-size:.85rem}
+.pc-eng .pcard-copy{display:flex;flex-direction:column;gap:12px;flex:1}
+.pc-eng .pcard-copy h4{margin:0}
+.pc-built{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:7px}
+.pc-built li{position:relative;padding-left:16px;color:var(--dark-muted);font-size:.9rem;line-height:1.4}
+.pc-built li::before{content:"";position:absolute;left:0;top:.55em;width:6px;height:6px;border-radius:50%;background:var(--dark-em,var(--accent))}
+.pc-res{display:flex;flex-wrap:wrap;gap:6px}
+.pc-res span{font-size:.75rem;font-weight:600;padding:4px 10px;border-radius:999px;color:var(--dark-ink);border:1px solid var(--dark-line);background:var(--dark-card)}
+.pc-eng .txt{margin-top:auto}
+/* group insurance strip */
+.group-ins{margin:0 auto 48px;max-width:980px}
+.gi-head{text-align:center;margin-bottom:20px}
+.gi-head h3{margin:0 0 6px}
+.gi-head p{color:var(--muted);margin:0 auto;max-width:620px}
+.gi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+@media (max-width:800px){.gi-grid{grid-template-columns:1fr}}
+.gi{display:flex;flex-direction:column;gap:4px;padding:18px 20px;border-radius:var(--radius-lg,16px);border:1px solid var(--line);background:var(--card,var(--bg))}
+.gi-from{font-size:.82rem;color:var(--muted)}
+.gi-arrow{color:var(--accent);font-weight:700}
+.gi b{font-size:1.1rem}
+.gi em{font-style:normal;font-size:.85rem;font-weight:600;color:var(--accent)}
+/* Workflow illustration */
+.wf-art{display:block;width:100%;height:auto;background:#9a5cff;border-radius:28px}
+.wf-card{fill:#1e1e24;stroke:#2c2c35;filter:drop-shadow(0 18px 24px rgba(30,0,70,.35))}
+.wf-card.light{fill:#f6f1ff;stroke:#e2d6fb}
+.wf-t{font:700 15px/1 var(--body);letter-spacing:.1em;fill:#f2f0f7}
+.wf-t.dark{fill:#2a1650}
+.wf-s{font:600 13px/1 var(--body);fill:#9d9aa8;letter-spacing:.04em}
+.wf-node{fill:#2a2a33;stroke:#4a4a58}
+.wf-wire{stroke:#5a5a6a;stroke-width:1.5;fill:none}
+.wf-flow{fill:none;stroke:#e6d9ff;stroke-width:3;stroke-dasharray:7 9;stroke-linecap:round;animation:wfdash 1.4s linear infinite}
+.wf-loop{fill:none;stroke:#ffd23f;stroke-width:3;stroke-dasharray:3 10;stroke-linecap:round;animation:wfdash 2s linear infinite reverse}
+.wf-pill{fill:#1e1e24;stroke:#ffd23f}
+.wf-pilltx{font:700 12px/1 var(--body);letter-spacing:.14em;fill:#ffd23f}
+.wf-float{animation:wffloat 6s ease-in-out infinite;animation-delay:var(--d)}
+.wf-prog{transform-box:fill-box;transform-origin:left;animation:wfprog 5s ease-out infinite;animation-delay:var(--pd)}
+.wf-spin{animation:wfspin 1s linear infinite}
+.wf-spin{transform-box:fill-box;transform-origin:center}
+.wf-chart{fill:none;stroke:#7b3fe4;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:320;stroke-dashoffset:320;animation:wfdraw 5s ease-out infinite}
+.wf-dot{opacity:0;animation:wfdot 5s infinite}
+@keyframes wfdash{to{stroke-dashoffset:-32}}
+@keyframes wffloat{50%{transform:translateY(-8px)}}
+@keyframes wfprog{0%{transform:scaleX(0)}60%,100%{transform:scaleX(var(--p))}}
+@keyframes wfspin{to{transform:rotate(360deg)}}
+@keyframes wfdraw{0%,10%{stroke-dashoffset:320}60%,100%{stroke-dashoffset:0}}
+@keyframes wfdot{0%,58%{opacity:0}64%,100%{opacity:1}}
+.wf-steps{list-style:none;counter-reset:wf;display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin:22px 0 0;padding:0}
+.wf-steps li{counter-increment:wf;padding:14px 16px;border:1px solid var(--line);border-radius:14px;background:var(--card,transparent)}
+.wf-steps li::before{content:"0" counter(wf);display:block;font-size:.72rem;letter-spacing:.12em;color:var(--accent);font-weight:700;margin-bottom:4px}
+.wf-steps b{display:block}
+.wf-steps span{display:block;font-size:.85rem;color:var(--muted);margin-top:2px}
+@media (max-width:900px){.wf-steps{grid-template-columns:1fr 1fr}.wf-steps li:last-child{grid-column:1/-1}.wf-art{border-radius:18px}}
+@media (prefers-reduced-motion:reduce){.wf-flow,.wf-loop,.wf-float,.wf-prog,.wf-spin,.wf-chart,.wf-dot{animation:none}.wf-chart{stroke-dashoffset:0}.wf-dot{opacity:1}.wf-prog{transform:scaleX(var(--p))}}
+/* workflow: theme-matched palette */
+.wf-art{--wa:var(--accent);--wa-l:color-mix(in srgb,var(--accent) 45%,#fff);--wa-xl:color-mix(in srgb,var(--accent) 22%,#fff);--wa-d:color-mix(in srgb,var(--accent) 30%,#1e1e24);
+  background:radial-gradient(circle at 1px 1px,color-mix(in srgb,var(--accent) 22%,transparent) 1px,transparent 0) 0 0/20px 20px,radial-gradient(ellipse at 50% 40%,color-mix(in srgb,var(--accent) 10%,var(--bg-alt)),var(--bg-alt) 70%);
+  border:1px solid var(--line)}
+.wf-art [fill="#7b3fe4"],.wf-art [fill="#9a5cff"]{fill:var(--wa)}
+.wf-art [stroke="#7b3fe4"]{stroke:var(--wa)}
+.wf-art [fill="#b98cff"],.wf-art [fill="#b9a2ee"]{fill:var(--wa-l)}
+.wf-art [stroke="#b98cff"]{stroke:var(--wa-l)}
+.wf-art [fill="#d6c6f5"]{fill:var(--wa-xl)}
+.wf-art [stroke="#d9c6ff"]{stroke:var(--wa-xl)}
+.wf-art [fill="#3a2a5c"],.wf-art [fill="#2a2140"]{fill:var(--wa-d)}
+.wf-art stop:first-child{stop-color:var(--wa)}
+.wf-art stop:last-child{stop-color:var(--wa-l)}
+.wf-card{filter:drop-shadow(0 16px 22px rgba(0,0,0,.16))}
+.wf-card.light{fill:var(--card);stroke:var(--line)}
+.wf-t.dark{fill:var(--ink,#1b1c20)}
+.wf-art .wf-card.light ~ path[stroke="#e7defa"]{stroke:var(--line)}
+.wf-flow{stroke:var(--wa);opacity:.75}
+.wf-loop{stroke:var(--wa)}
+.wf-pill{fill:var(--card);stroke:var(--wa)}
+.wf-pilltx{fill:var(--wa)}
+.wf-chart{stroke:var(--wa)}
 
 /* @fonts https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600&family=Manrope:wght@400;500;600;700&display=swap */
 /* @title Jhamman Sharma — Ivory & Ink */

@@ -569,6 +569,85 @@ a.ai-card:hover{transform:translateY(-3px)}
 .domains{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:8px;margin:18px auto 16px}
 .domains span{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--hero-muted,var(--muted));margin-right:4px;font-weight:600}
 .domains i{font-style:normal;font-size:13px;padding:5px 12px;border-radius:999px;border:1px solid color-mix(in srgb,var(--hero-ink,var(--ink)) 22%,transparent);color:var(--hero-ink,var(--ink))}
+/* engineering cards (replace drawn mocks) */
+.pc-eng .pc-top{margin:22px 22px 0;padding:18px 18px 16px;border-radius:16px;background:linear-gradient(135deg,color-mix(in srgb,var(--dark-em,var(--accent)) 22%,transparent),transparent);border:1px solid var(--dark-line);display:flex;flex-direction:column;gap:2px}
+.pc-k{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--dark-muted);font-weight:600}
+.pc-top b{font-family:var(--head);font-size:2.4rem;line-height:1.05;color:var(--dark-em,var(--accent))}
+.pc-top small{color:var(--dark-muted);font-size:.85rem}
+.pc-eng .pcard-copy{display:flex;flex-direction:column;gap:12px;flex:1}
+.pc-eng .pcard-copy h4{margin:0}
+.pc-built{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:7px}
+.pc-built li{position:relative;padding-left:16px;color:var(--dark-muted);font-size:.9rem;line-height:1.4}
+.pc-built li::before{content:"";position:absolute;left:0;top:.55em;width:6px;height:6px;border-radius:50%;background:var(--dark-em,var(--accent))}
+.pc-res{display:flex;flex-wrap:wrap;gap:6px}
+.pc-res span{font-size:.75rem;font-weight:600;padding:4px 10px;border-radius:999px;color:var(--dark-ink);border:1px solid var(--dark-line);background:var(--dark-card)}
+.pc-eng .txt{margin-top:auto}
+/* group insurance strip */
+.group-ins{margin:0 auto 48px;max-width:980px}
+.gi-head{text-align:center;margin-bottom:20px}
+.gi-head h3{margin:0 0 6px}
+.gi-head p{color:var(--muted);margin:0 auto;max-width:620px}
+.gi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+@media (max-width:800px){.gi-grid{grid-template-columns:1fr}}
+.gi{display:flex;flex-direction:column;gap:4px;padding:18px 20px;border-radius:var(--radius-lg,16px);border:1px solid var(--line);background:var(--card,var(--bg))}
+.gi-from{font-size:.82rem;color:var(--muted)}
+.gi-arrow{color:var(--accent);font-weight:700}
+.gi b{font-size:1.1rem}
+.gi em{font-style:normal;font-size:.85rem;font-weight:600;color:var(--accent)}
+/* Workflow illustration */
+.wf-art{display:block;width:100%;height:auto;background:#9a5cff;border-radius:28px}
+.wf-card{fill:#1e1e24;stroke:#2c2c35;filter:drop-shadow(0 18px 24px rgba(30,0,70,.35))}
+.wf-card.light{fill:#f6f1ff;stroke:#e2d6fb}
+.wf-t{font:700 15px/1 var(--body);letter-spacing:.1em;fill:#f2f0f7}
+.wf-t.dark{fill:#2a1650}
+.wf-s{font:600 13px/1 var(--body);fill:#9d9aa8;letter-spacing:.04em}
+.wf-node{fill:#2a2a33;stroke:#4a4a58}
+.wf-wire{stroke:#5a5a6a;stroke-width:1.5;fill:none}
+.wf-flow{fill:none;stroke:#e6d9ff;stroke-width:3;stroke-dasharray:7 9;stroke-linecap:round;animation:wfdash 1.4s linear infinite}
+.wf-loop{fill:none;stroke:#ffd23f;stroke-width:3;stroke-dasharray:3 10;stroke-linecap:round;animation:wfdash 2s linear infinite reverse}
+.wf-pill{fill:#1e1e24;stroke:#ffd23f}
+.wf-pilltx{font:700 12px/1 var(--body);letter-spacing:.14em;fill:#ffd23f}
+.wf-float{animation:wffloat 6s ease-in-out infinite;animation-delay:var(--d)}
+.wf-prog{transform-box:fill-box;transform-origin:left;animation:wfprog 5s ease-out infinite;animation-delay:var(--pd)}
+.wf-spin{animation:wfspin 1s linear infinite}
+.wf-spin{transform-box:fill-box;transform-origin:center}
+.wf-chart{fill:none;stroke:#7b3fe4;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:320;stroke-dashoffset:320;animation:wfdraw 5s ease-out infinite}
+.wf-dot{opacity:0;animation:wfdot 5s infinite}
+@keyframes wfdash{to{stroke-dashoffset:-32}}
+@keyframes wffloat{50%{transform:translateY(-8px)}}
+@keyframes wfprog{0%{transform:scaleX(0)}60%,100%{transform:scaleX(var(--p))}}
+@keyframes wfspin{to{transform:rotate(360deg)}}
+@keyframes wfdraw{0%,10%{stroke-dashoffset:320}60%,100%{stroke-dashoffset:0}}
+@keyframes wfdot{0%,58%{opacity:0}64%,100%{opacity:1}}
+.wf-steps{list-style:none;counter-reset:wf;display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin:22px 0 0;padding:0}
+.wf-steps li{counter-increment:wf;padding:14px 16px;border:1px solid var(--line);border-radius:14px;background:var(--card,transparent)}
+.wf-steps li::before{content:"0" counter(wf);display:block;font-size:.72rem;letter-spacing:.12em;color:var(--accent);font-weight:700;margin-bottom:4px}
+.wf-steps b{display:block}
+.wf-steps span{display:block;font-size:.85rem;color:var(--muted);margin-top:2px}
+@media (max-width:900px){.wf-steps{grid-template-columns:1fr 1fr}.wf-steps li:last-child{grid-column:1/-1}.wf-art{border-radius:18px}}
+@media (prefers-reduced-motion:reduce){.wf-flow,.wf-loop,.wf-float,.wf-prog,.wf-spin,.wf-chart,.wf-dot{animation:none}.wf-chart{stroke-dashoffset:0}.wf-dot{opacity:1}.wf-prog{transform:scaleX(var(--p))}}
+/* workflow: theme-matched palette */
+.wf-art{--wa:var(--accent);--wa-l:color-mix(in srgb,var(--accent) 45%,#fff);--wa-xl:color-mix(in srgb,var(--accent) 22%,#fff);--wa-d:color-mix(in srgb,var(--accent) 30%,#1e1e24);
+  background:radial-gradient(circle at 1px 1px,color-mix(in srgb,var(--accent) 22%,transparent) 1px,transparent 0) 0 0/20px 20px,radial-gradient(ellipse at 50% 40%,color-mix(in srgb,var(--accent) 10%,var(--bg-alt)),var(--bg-alt) 70%);
+  border:1px solid var(--line)}
+.wf-art [fill="#7b3fe4"],.wf-art [fill="#9a5cff"]{fill:var(--wa)}
+.wf-art [stroke="#7b3fe4"]{stroke:var(--wa)}
+.wf-art [fill="#b98cff"],.wf-art [fill="#b9a2ee"]{fill:var(--wa-l)}
+.wf-art [stroke="#b98cff"]{stroke:var(--wa-l)}
+.wf-art [fill="#d6c6f5"]{fill:var(--wa-xl)}
+.wf-art [stroke="#d9c6ff"]{stroke:var(--wa-xl)}
+.wf-art [fill="#3a2a5c"],.wf-art [fill="#2a2140"]{fill:var(--wa-d)}
+.wf-art stop:first-child{stop-color:var(--wa)}
+.wf-art stop:last-child{stop-color:var(--wa-l)}
+.wf-card{filter:drop-shadow(0 16px 22px rgba(0,0,0,.16))}
+.wf-card.light{fill:var(--card);stroke:var(--line)}
+.wf-t.dark{fill:var(--ink,#1b1c20)}
+.wf-art .wf-card.light ~ path[stroke="#e7defa"]{stroke:var(--line)}
+.wf-flow{stroke:var(--wa);opacity:.75}
+.wf-loop{stroke:var(--wa)}
+.wf-pill{fill:var(--card);stroke:var(--wa)}
+.wf-pilltx{fill:var(--wa)}
+.wf-chart{stroke:var(--wa)}
 
 /* @fonts https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;1,9..144,500&family=DM+Sans:wght@400;500;700&display=swap */
 /* @title Jhamman Sharma — Pink City */
@@ -793,6 +872,111 @@ a.ai-card:hover{transform:translateY(-3px)}
   </div>
 </section>
 
+<section id="how" class="sec how">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">How I build</div>
+      <h2>From problem to <em>measurable impact</em>, and back again</h2>
+      <p class="lead">The same loop behind every product on this page: start from the customer, design for scale, build with AI-assisted engineering, ship reliably, then measure and iterate.</p>
+    </div>
+    <div class="wf">
+      <svg class="wf-art" viewBox="0 0 1200 620" role="img" aria-label="Workflow: a problem becomes a spec, is architected, built by AI agents with tests and review, shipped at scale, and measured for business impact, then the loop repeats">
+        <defs>
+          <linearGradient id="wfbar" x1="0" x2="1"><stop offset="0" stop-color="#7b3fe4"/><stop offset="1" stop-color="#b98cff"/></linearGradient>
+        </defs>
+        <!-- connectors -->
+        <path class="wf-flow" d="M300 230 C 340 230, 330 150, 372 150"/>
+        <path class="wf-flow" d="M480 238 C 480 270, 470 280, 470 310"/>
+        <path class="wf-flow" d="M652 380 C 700 380, 690 190, 728 190"/>
+        <path class="wf-flow" d="M850 282 C 850 310, 880 320, 885 348"/>
+        <path class="wf-loop" d="M900 545 C 880 600, 260 610, 190 395"/>
+        <g transform="translate(470 572)"><rect x="-118" y="-17" width="236" height="34" rx="17" class="wf-pill"/><text class="wf-pilltx" text-anchor="middle" y="5">↺ MEASURE · LEARN · ITERATE</text></g>
+
+        <!-- 1 spec -->
+        <g class="wf-float" style="--d:0s"><g transform="translate(60 150) rotate(-3)">
+          <rect width="250" height="235" rx="16" class="wf-card light"/>
+          <circle cx="34" cy="36" r="17" fill="#7b3fe4"/><path d="M28 28h9l5 5v12h-14z" fill="none" stroke="#fff" stroke-width="2"/>
+          <text x="62" y="32" class="wf-t dark">PROBLEM → SPEC</text><rect x="62" y="42" width="110" height="6" rx="3" fill="#d6c6f5"/>
+          <g transform="translate(22 78)">
+            <g><rect width="16" height="16" rx="4" fill="#7b3fe4"/><path d="M4 8l3 3 6-6" stroke="#fff" stroke-width="2" fill="none"/><rect x="28" y="5" width="150" height="6" rx="3" fill="#b9a2ee"/></g>
+            <g transform="translate(0 30)"><rect width="16" height="16" rx="4" fill="#7b3fe4"/><path d="M4 8l3 3 6-6" stroke="#fff" stroke-width="2" fill="none"/><rect x="28" y="5" width="120" height="6" rx="3" fill="#b9a2ee"/></g>
+            <g transform="translate(0 60)"><rect width="16" height="16" rx="4" fill="#7b3fe4"/><path d="M4 8l3 3 6-6" stroke="#fff" stroke-width="2" fill="none"/><rect x="28" y="5" width="165" height="6" rx="3" fill="#b9a2ee"/></g>
+            <g transform="translate(0 90)"><rect width="16" height="16" rx="4" fill="#7b3fe4"/><path d="M4 8l3 3 6-6" stroke="#fff" stroke-width="2" fill="none"/><rect x="28" y="5" width="90" height="6" rx="3" fill="#f5b82e"/></g>
+            <g transform="translate(0 120)"><rect width="16" height="16" rx="4" fill="none" stroke="#7b3fe4" stroke-width="2"/><rect x="28" y="5" width="130" height="6" rx="3" fill="#b9a2ee"/></g>
+          </g>
+        </g></g>
+
+        <!-- 2 architect -->
+        <g class="wf-float" style="--d:-1.5s"><g transform="translate(365 60) rotate(2)">
+          <rect width="240" height="175" rx="16" class="wf-card"/>
+          <circle cx="32" cy="32" r="15" fill="#b98cff"/><path d="M25 27h6v6h-6zM33 33h6v6h-6zM31 30h4v6" fill="none" stroke="#1b1b22" stroke-width="2"/>
+          <text x="56" y="30" class="wf-t">ARCHITECT</text><rect x="56" y="39" width="90" height="5" rx="2.5" fill="#3d3d4a"/>
+          <rect x="88" y="62" width="64" height="20" rx="6" class="wf-node"/>
+          <path d="M120 82v12M60 94h120M60 94v10M120 94v10M180 94v10" class="wf-wire"/>
+          <rect x="34" y="104" width="52" height="20" rx="6" class="wf-node"/><rect x="94" y="104" width="52" height="20" rx="6" class="wf-node"/><rect x="154" y="104" width="52" height="20" rx="6" class="wf-node"/>
+          <path d="M60 124v10M120 124v10M180 124v10" class="wf-wire"/>
+          <rect x="34" y="134" width="172" height="18" rx="6" fill="#2a2140" stroke="#7b3fe4"/><rect x="80" y="141" width="80" height="4" rx="2" fill="#b98cff"/>
+        </g></g>
+
+        <!-- 3 build with AI agents -->
+        <g class="wf-float" style="--d:-3s"><g transform="translate(350 305) rotate(-2)">
+          <rect width="305" height="245" rx="16" class="wf-card"/>
+          <circle cx="36" cy="38" r="19" fill="#9a5cff"/><path d="M36 26l3 9 9 3-9 3-3 9-3-9-9-3 9-3z" fill="#fff"/>
+          <text x="66" y="34" class="wf-t">BUILD WITH AI</text><rect x="66" y="43" width="120" height="5" rx="2.5" fill="#3d3d4a"/>
+          <line x1="0" y1="72" x2="305" y2="72" stroke="#2c2c35"/>
+          <g transform="translate(18 90)">
+            <circle cx="16" cy="16" r="16" fill="#3a2a5c"/><path d="M11 12l-4 4 4 4M21 12l4 4-4 4" stroke="#d9c6ff" stroke-width="2" fill="none"/>
+            <rect x="44" y="6" width="120" height="6" rx="3" fill="#4a4a58"/><rect x="44" y="20" width="180" height="5" rx="2.5" fill="#2c2c35"/><rect x="44" y="20" width="180" height="5" rx="2.5" fill="url(#wfbar)" class="wf-prog" style="--p:1;--pd:0s"/>
+            <circle cx="252" cy="16" r="10" fill="#22c55e"/><path d="M247 16l3.5 3.5 6-6" stroke="#fff" stroke-width="2" fill="none"/>
+          </g>
+          <g transform="translate(18 140)">
+            <circle cx="16" cy="16" r="16" fill="#3a2a5c"/><path d="M10 13h12v8a6 6 0 0 1-12 0zM16 13v14M13 9l3 4 3-4" stroke="#d9c6ff" stroke-width="1.8" fill="none"/>
+            <rect x="44" y="6" width="100" height="6" rx="3" fill="#4a4a58"/><rect x="44" y="20" width="180" height="5" rx="2.5" fill="#2c2c35"/><rect x="44" y="20" width="180" height="5" rx="2.5" fill="url(#wfbar)" class="wf-prog" style="--p:.62;--pd:.6s"/>
+            <g transform="translate(252 16)"><g class="wf-spin"><circle r="9" fill="none" stroke="#3d3d4a" stroke-width="2.5"/><path d="M0 -9a9 9 0 0 1 9 9" stroke="#b98cff" stroke-width="2.5" fill="none"/></g></g>
+          </g>
+          <g transform="translate(18 190)">
+            <circle cx="16" cy="16" r="16" fill="#3a2a5c"/><circle cx="16" cy="16" r="5" stroke="#d9c6ff" stroke-width="2" fill="none"/><path d="M6 16q10-10 20 0q-10 10-20 0" stroke="#d9c6ff" stroke-width="1.6" fill="none"/>
+            <rect x="44" y="6" width="130" height="6" rx="3" fill="#4a4a58"/><rect x="44" y="20" width="180" height="5" rx="2.5" fill="#2c2c35"/><rect x="44" y="20" width="180" height="5" rx="2.5" fill="url(#wfbar)" class="wf-prog" style="--p:.3;--pd:1.2s"/>
+            <g transform="translate(252 16)"><g class="wf-spin"><circle r="9" fill="none" stroke="#3d3d4a" stroke-width="2.5"/><path d="M0 -9a9 9 0 0 1 9 9" stroke="#b98cff" stroke-width="2.5" fill="none"/></g></g>
+          </g>
+        </g></g>
+
+        <!-- 4 ship & scale -->
+        <g class="wf-float" style="--d:-2s"><g transform="translate(725 85) rotate(3)">
+          <rect width="250" height="195" rx="16" class="wf-card"/>
+          <circle cx="22" cy="22" r="5" fill="#ff5f57"/><circle cx="38" cy="22" r="5" fill="#febc2e"/><circle cx="54" cy="22" r="5" fill="#28c840"/>
+          <text x="76" y="27" class="wf-t">SHIP &amp; SCALE</text>
+          <g transform="translate(22 52)">
+            <circle cx="6" cy="6" r="6" fill="#22c55e"/><rect x="20" y="3" width="90" height="6" rx="3" fill="#4a4a58"/><rect x="118" y="3" width="50" height="6" rx="3" fill="#3d3d4a"/>
+            <circle cx="6" cy="30" r="6" fill="#22c55e"/><rect x="20" y="27" width="120" height="6" rx="3" fill="#4a4a58"/>
+            <circle cx="6" cy="54" r="6" fill="#22c55e"/><rect x="20" y="51" width="70" height="6" rx="3" fill="#4a4a58"/><rect x="98" y="51" width="60" height="6" rx="3" fill="#3d3d4a"/>
+            <circle cx="6" cy="78" r="6" fill="#22c55e"/><rect x="20" y="75" width="100" height="6" rx="3" fill="#4a4a58"/>
+            <rect x="0" y="100" width="206" height="6" rx="3" fill="#2c2c35"/><rect x="0" y="100" width="206" height="6" rx="3" fill="#22c55e" class="wf-prog" style="--p:1;--pd:.3s"/>
+            <text x="0" y="128" class="wf-s">99.95% · p95 &lt; 1s</text>
+          </g>
+        </g></g>
+
+        <!-- 5 impact -->
+        <g class="wf-float" style="--d:-.8s"><g transform="translate(770 345) rotate(-2)">
+          <rect width="310" height="200" rx="16" class="wf-card light"/>
+          <circle cx="34" cy="34" r="17" fill="#7b3fe4"/><path d="M25 40l6-6 5 4 8-10" stroke="#fff" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+          <text x="62" y="31" class="wf-t dark">BUSINESS IMPACT</text><rect x="62" y="40" width="100" height="6" rx="3" fill="#d6c6f5"/>
+          <path d="M24 170H290M24 140H290M24 110H290M24 80H290" stroke="#e7defa"/>
+          <polyline class="wf-chart" points="26,160 66,140 100,148 140,118 176,126 214,96 250,84 286,64"/>
+          <circle class="wf-dot" cx="286" cy="64" r="6" fill="#7b3fe4"/>
+        </g></g>
+      </svg>
+      <ol class="wf-steps">
+        <li><b>Problem</b><span>customer need → spec</span></li>
+        <li><b>Architect</b><span>distributed · cloud-native</span></li>
+        <li><b>Build with AI</b><span>agentic SDLC · tests · review</span></li>
+        <li><b>Ship &amp; scale</b><span>high-scale · reliable</span></li>
+        <li><b>Business impact</b><span>measure · learn · iterate</span></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
 <section id="paytm" class="sec sec-dark">
   <div class="wrap">
     <div class="sec-head">
@@ -815,60 +999,29 @@ a.ai-card:hover{transform:translateY(-3px)}
       </div>
     </div>
     <div class="paytm-grid">
-      <a class="pcard" href="https://tickets.paytm.com/flights/" target="_blank" rel="noopener">
-        <div class="mock">
-          <div class="m-head">Flights</div>
-          <div class="m-row"><div><small>From</small><b>JAI</b><span>Jaipur</span></div><div class="m-arrow">⇄</div><div><small>To</small><b>BLR</b><span>Bengaluru</span></div></div>
-          <div class="m-line"><span>Sun, 25 Oct</span><span>1 adult · Economy</span></div>
-          <div class="m-fare"><span>IndiGo 6E-512</span><b>₹4,862</b></div>
-          <div class="m-fare"><span>Air India AI-881</span><b>₹5,140</b></div>
-          <div class="m-btn">Search flights</div>
-        </div>
-        <div class="pcard-copy"><h4>Flights</h4><p>Multi-supplier engine searching airlines, aggregators and GDSs in parallel: <b>2M+ searches a day</b> at sub-second latency, <b>3–5% lower supply cost</b>.</p><span class="txt">tickets.paytm.com/flights →</span></div>
+      <a class="pcard pc-eng" href="https://tickets.paytm.com/flights/" target="_blank" rel="noopener">
+        <div class="pc-top"><span class="pc-k">Flights</span><b>2M+</b><small>searches a day, sub-second</small></div>
+        <div class="pcard-copy"><h4>Multi-supplier search &amp; add-ons</h4><ul class="pc-built"><li>10+ direct airline and GDS / aggregator integrations, searched in parallel</li><li>Travel Pass</li><li>Live flight status via Cirium</li><li>Cancellation protection</li><li>Domestic &amp; international travel insurance</li></ul><div class="pc-res"><span>3–5% lower supply cost</span><span>6–8% attach rate</span></div><span class="txt">tickets.paytm.com/flights →</span></div>
       </a>
-      <a class="pcard" href="https://tickets.paytm.com/bus/" target="_blank" rel="noopener">
-        <div class="mock">
-          <div class="m-head">Bus tickets · Select seat</div>
-          <div class="seats">
-            <i></i><i class="t"></i><b></b><i></i><i></i>
-            <i class="t"></i><i></i><b></b><i class="s"></i><i></i>
-            <i></i><i></i><b></b><i class="t"></i><i class="s"></i>
-            <i class="t"></i><i></i><b></b><i></i><i></i>
-          </div>
-          <div class="m-line"><span>Seat 9, 15 · Live GPS tracking</span></div>
-          <div class="m-btn">Pay ₹1,180</div>
-        </div>
-        <div class="pcard-copy"><h4>Bus</h4><p>Recommendation engine with <b>+20% conversion</b>, live GPS tracking and 9 operator partners onboarded.</p><span class="txt">tickets.paytm.com/bus →</span></div>
+      <a class="pcard pc-eng" href="https://tickets.paytm.com/bus/" target="_blank" rel="noopener">
+        <div class="pc-top"><span class="pc-k">Bus</span><b>+20%</b><small>conversion from recommendations</small></div>
+        <div class="pcard-copy"><h4>Accurate tracking, protected trips</h4><ul class="pc-built"><li>Recommendation engine</li><li>Live bus GPS</li><li>Precise boarding points: operator and customer locations matched to pin the real stop</li><li>Bus Assured &amp; Assured Lite</li><li>Cancellation protection &amp; travel insurance</li></ul><div class="pc-res"><span>9 operators</span><span>7–8% protection attach</span><span>5% insurance attach</span></div><span class="txt">tickets.paytm.com/bus →</span></div>
       </a>
-      <a class="pcard" href="https://paytminsurance.co.in/motor-insurance/" target="_blank" rel="noopener">
-        <div class="mock">
-          <div class="m-head">Motor insurance · Compare quotes</div>
-          <div class="m-row"><div><small>Vehicle</small><b>RJ 14</b><span>Hatchback · 2021</span></div><div><small>Cover</small><b>₹5.4L</b><span>IDV · Comprehensive</span></div></div>
-          <div class="m-fare"><span>Insurer A · Zero dep</span><b>₹8,240</b></div>
-          <div class="m-fare"><span>Insurer B</span><b>₹8,615</b></div>
-          <div class="m-fare"><span>Insurer C</span><b>₹9,030</b></div>
-          <div class="m-btn">Buy policy</div>
-        </div>
-        <div class="pcard-copy"><h4>Motor insurance</h4><p>Car and two-wheeler insurance platform built from scratch: <b>10+ insurers in 2 months</b>, +150% daily bookings.</p><span class="txt">paytminsurance.co.in →</span></div>
+      <a class="pcard pc-eng" href="https://tickets.paytm.com/trains/" target="_blank" rel="noopener">
+        <div class="pc-top"><span class="pc-k">Train</span><b>7–10%</b><small>attach rate</small></div>
+        <div class="pcard-copy"><h4>Confirmed journeys</h4><ul class="pc-built"><li>Trip Guarantee</li><li>Cancellation protection</li><li>Train stitching: train + bus journeys in one booking</li></ul><span class="txt">tickets.paytm.com/trains →</span></div>
       </a>
-      <a class="pcard" href="https://paytmmall.com/" target="_blank" rel="noopener">
-        <div class="mock">
-          <div class="m-head">Marketplace</div>
-          <div class="m-prods">
-            <div><i style="background:linear-gradient(135deg,#f6c28b,#e07b39)"></i><span>Seller A</span><b>₹799</b></div>
-            <div><i style="background:linear-gradient(135deg,#9fc3ff,#3d6fd8)"></i><span>Seller B</span><b>₹1,299</b></div>
-            <div><i style="background:linear-gradient(135deg,#a5e6c8,#2e9b6f)"></i><span>Seller C</span><b>₹349</b></div>
-            <div><i style="background:linear-gradient(135deg,#e7b6e0,#a14c96)"></i><span>Seller D</span><b>₹2,099</b></div>
-          </div>
-          <div class="m-btn">Add to cart</div>
-        </div>
-        <div class="pcard-copy"><h4>Paytm Mall</h4><p>Multi-seller marketplace engineering: many sellers, one catalogue, one checkout, automatic seller settlement.</p><span class="txt">paytmmall.com →</span></div>
+      <a class="pcard pc-eng" href="https://paytminsurance.co.in/motor-insurance/" target="_blank" rel="noopener">
+        <div class="pc-top"><span class="pc-k">Motor insurance</span><b>10K+</b><small>policies sold a day</small></div>
+        <div class="pcard-copy"><h4>Built from scratch</h4><ul class="pc-built"><li>20+ insurers integrated</li><li>Two-wheeler &amp; car</li><li>Quote from vehicle number, instant policy issuance</li></ul><div class="pc-res"><span>20+ insurers</span><span>2W + 4W</span></div><span class="txt">paytminsurance.co.in →</span></div>
       </a>
     </div>
+
     <div class="plinks">
       <span class="plinks-title">All products I worked on</span>
       <a href="https://tickets.paytm.com/flights/" target="_blank" rel="noopener">Flights</a>
       <a href="https://tickets.paytm.com/bus/" target="_blank" rel="noopener">Bus</a>
+      <a href="https://tickets.paytm.com/trains/" target="_blank" rel="noopener">Train</a>
       <a href="https://paytminsurance.co.in/motor-insurance/" target="_blank" rel="noopener">Motor insurance</a>
       <a href="https://paytminsurance.co.in/car-insurance/" target="_blank" rel="noopener">Car insurance</a>
       <a href="https://paytminsurance.co.in/two-wheeler-insurance/" target="_blank" rel="noopener">Two-wheeler insurance</a>
@@ -879,9 +1032,9 @@ a.ai-card:hover{transform:translateY(-3px)}
       <div><b>2M+</b><span>flight searches a day, sub-second p95</span></div>
       <div><b>100K+</b><span>payments a day at 99.95% availability</span></div>
       <div><b>−20%</b><span>infra cost: 90+ services moved to AWS Graviton, zero downtime</span></div>
-      <div><b>+150%</b><span>daily insurance bookings</span></div>
+      <div><b>10K+</b><span>motor insurance policies sold a day, 20+ insurers</span></div>
     </div>
-    <p class="note">Paytm Checkin screens are from the live app; the four cards are simplified illustrations. Open the links for the live products.</p>
+    <p class="note">Paytm Checkin screens are from the live app. Open the links for the live products.</p>
   </div>
 </section>
 
@@ -898,6 +1051,14 @@ a.ai-card:hover{transform:translateY(-3px)}
       <figure class="mid"><img src="assets/insurance-car.jpg" alt="Paytm car insurance quote flow" loading="lazy"><figcaption><b>Car insurance</b>Quote from your car number</figcaption></figure>
       <figure><img src="assets/insurance-bike.jpg" alt="Paytm two-wheeler insurance quote flow" loading="lazy"><figcaption><b>Two-wheeler insurance</b>Instant policy issuance</figcaption></figure>
     </div>
+    <div class="group-ins">
+      <div class="gi-head"><h3>Group insurance across Paytm</h3><p>One insurance platform plugged into other Paytm teams' checkouts. Their users get relevant cover in one tap, with no new sign-up.</p></div>
+      <div class="gi-grid">
+        <div class="gi"><span class="gi-from">Electricity bill</span><span class="gi-arrow">→</span><b>Home insurance</b><em>500–1K policies a day</em></div>
+        <div class="gi"><span class="gi-from">FASTag recharge &amp; motor insurance</span><span class="gi-arrow">→</span><b>Personal accident cover</b><em>2–3K policies a day</em></div>
+        <div class="gi"><span class="gi-from">Wi-Fi &amp; other bill payments</span><span class="gi-arrow">→</span><b>Cyber protection</b></div>
+      </div>
+    </div>
     <div class="ins">
       <div class="arch-diagram" aria-label="Insurance microservices architecture">
         <div class="ad-row ad-chan"><span>Paytm app</span><span>Web</span><span>Travel checkout</span><span>Partner APIs</span></div>
@@ -907,12 +1068,12 @@ a.ai-card:hover{transform:translateY(-3px)}
           <span><b>Payments</b>collect &amp; refund</span><span><b>Rules</b>Drools engine</span><span><b>Cohorts</b>targeting</span>
         </div>
         <div class="ad-bus">Kafka event bus · Redis · MySQL</div>
-        <div class="ad-row ad-ins"><span>Insurer 1</span><span>Insurer 2</span><span>Insurer 3</span><span>+10 partners</span></div>
+        <div class="ad-row ad-ins"><span>Insurer 1</span><span>Insurer 2</span><span>Insurer 3</span><span>+20 partners</span></div>
         <small>Simplified architecture</small>
       </div>
       <div class="ins-points">
         <div class="ip"><b>25 → 10 days</b><span>A quote &amp; proposal framework cut the time to integrate a new insurer by more than half.</span></div>
-        <div class="ip"><b>10+ insurers in 2 months</b><span>Partners onboarded fast, lifting daily bookings by <strong>150%</strong>.</span></div>
+        <div class="ip"><b>20+ insurers · 10K+ a day</b><span>10+ onboarded in the first 2 months (+150% daily bookings); now 10K+ motor policies sold a day.</span></div>
         <div class="ip"><b>New product in 1 day</b><span>A configuration-driven framework lets the product team launch group insurance products without new code.</span></div>
         <div class="ip"><b>+400% daily bookings</b><span>Cohort targeting and real-time retargeting using data from across Paytm.</span></div>
         <div class="ip"><b>Rules without engineers</b><span>Cancellation Protection rules moved to a Drools rule engine, so business teams edit them directly.</span></div>
