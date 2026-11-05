@@ -13,8 +13,8 @@
   --header-bg:rgba(255,253,249,.92); --header-ink:var(--ink-navy); --header-line:var(--line);
   --hero-bg:#F4EAD8; --hero-ink:var(--ink-navy); --hero-muted:#4A5568; --hero-line:rgba(31,42,68,.18);
   --strip-bg:var(--ink-navy); --strip-ink:#F1EBE0; --strip-num:#E3B877; --strip-line:rgba(255,255,255,.12);
-  --dark:var(--monsoon); --dark-ink:#F7F3EC; --dark-muted:#cfdcd6; --dark-line:rgba(255,255,255,.16); --dark-card:rgba(0,0,0,.18); --dark-em:#F1C98A;
-  --metric-bg:#E6EFEA; --metric-ink:var(--monsoon);
+  --dark:var(--ink-navy); --dark-ink:#F7F3EC; --dark-muted:#c9cfdb; --dark-line:rgba(255,255,255,.16); --dark-card:rgba(0,0,0,.18); --dark-em:#F1C98A;
+  --metric-bg:#F4EAD8; --metric-ink:var(--ink-navy);
   --contact-bg:var(--ink-navy); --contact-ink:#F7F3EC; --contact-muted:#c9cfdb; --contact-line:rgba(255,255,255,.14);
 }
 body{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .34 0 0 0 0 .24 0 0 0 0 .16 0 0 0 .07 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
